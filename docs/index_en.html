@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Yet - Minimalist Emotional Self-Check App</title>
+    <meta name="description"
+        content="A completely local emotional self-check app that helps you quickly assess your emotional state, record your feelings, and protect your privacy.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-switcher a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: white;
+            color: #1d1dc9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: bold;
+            border-radius: 27px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #1d1dc9;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .features {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: #1d1dc9;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: #f6f6f8;
+            border-radius: 20px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #1d1dc9;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .privacy-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .privacy-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .privacy-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+        }
+
+        .footer {
+            background: #1d1dc9;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="language-switcher">
+        <a href="index.html">中文</a>
+    </div>
+
+    <section class="hero">
+        <div class="app-icon">疯</div>
+        <h1>Mad Yet?</h1>
+        <p>A minimalist emotional self-check app<br>Quickly assess your emotional state and record your feelings</p>
+        <a href="#download" class="cta-button">Download Now</a>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Mad Yet</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Minimalist Design</h3>
+                    <p>One question, two choices. Simple and direct emotional check-in without complex processes,
+                        focusing on your current feelings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>100% local storage. All data is encrypted and saved on your device. We have no servers and will
+                        never upload any of your information.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Emotion Journal</h3>
+                    <p>Record your vents and thoughts anytime. Hidden history feature lets you review your emotional
+                        journey.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌓</div>
+                    <h3>Dark Mode</h3>
+                    <p>Supports light and dark themes, automatically follows system settings for comfortable use in any
+                        environment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌏</div>
+                    <h3>Bilingual Support</h3>
+                    <p>Full support for Simplified Chinese and English. Switch interface language anytime to suit your
+                        preference.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💙</div>
+                    <h3>Gentle Companion</h3>
+                    <p>When you need help, the app recommends nearby counseling centers or relaxation spots.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy-section">
+        <div class="container">
+            <h2>Your Privacy, Our Commitment</h2>
+            <p>We understand the private nature of emotional records. That's why Mad Yet uses a completely local design
+                philosophy. All data is encrypted and stored on your device, protected with iOS system backups. We have
+                no servers, collect no data—your privacy is entirely in your control.</p>
+            <a href="privacy_en.html" class="cta-button">View Privacy Policy</a>
+        </div>
+    </section>
+
+    <section class="features" id="download">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Get Started</h2>
+            <p style="font-size: 1.2em; color: #666; margin-bottom: 30px;">
+                Search for "Mad Yet" on the App Store to download
+            </p>
+            <p style="color: #999;">
+                Requires iOS 17.0 or later
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy_en.html">Privacy Policy</a>
+            <a href="terms_en.html">Terms of Service</a>
+            <a href="support_en.html">Support & Feedback</a>
+        </div>
+        <p>&copy; 2026 NewTree Tech. All rights reserved.</p>
+        <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">Made with Privacy in Mind</p>
+    </footer>
+</body>
+
+</html>
